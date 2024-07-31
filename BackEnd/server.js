@@ -31,6 +31,14 @@ app.use(cors());
 app.use('/api/tasks', tasksRouter);
 app.use('/api/auth', authRouter);
 
+app.get('/', async (req, res) => {
+    try {
+      res.send("Hello from GET with success");
+    } catch (error) {
+      res.send("Hello from GET with error");
+    }
+  });
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
